@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import {BrowserRouter as Router, Route, Redirect, BrowserRouter} from "react-router-dom";
 
+
 import Header from "./components/header/header";
 import HomePage from "./components/homePage/homePage";
 import Contracts from "./components/contacts/Contracts";
@@ -13,8 +14,8 @@ import UserInfo from "./components/contacts/userInfo";
 
 const RAY_IMAGE = "https://specials-images.forbesimg.com/imageserve/5e63b3c8e1e617000759130e/960x0.jpg?fit=scale";
 
-function App() {
 
+function App() {
     const contacts = [{
         id: 0,
         firstName: "Барней",
@@ -81,9 +82,8 @@ function App() {
         <div>
             <div className="wrapper">
                 <div className="container">
-
-                    <BrowserRouter basename='Home_Work-25'>
-                        <Router>
+                    <Router>
+                        <BrowserRouter basename="/Home_Work-25">
                             <Header/>
                             <Route exact path="">
                                 <Redirect to="/home"/>
@@ -99,15 +99,10 @@ function App() {
                             <Route path='/contacts/:username/:id'>
                                 <UserInfo data={contacts}/>
                             </Route>
-                        </Router>
-                    </BrowserRouter>
-
-
-
+                        </BrowserRouter>
+                    </Router>
                 </div>
             </div>
-
-
         </div>
     );
 }
