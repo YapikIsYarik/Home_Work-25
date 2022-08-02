@@ -1,0 +1,18 @@
+.gallery-container{
+    display: flex;
+    justify-content: center;
+padding: 50px 0 0  0;
+}
+.gallery{
+    display: flex;
+
+}
+.gallery__item{
+    width: 400px;
+    height: 100%;
+    margin: 10px;
+}
+.gallery__column{
+    display: flex;
+    flex-direction: column;
+}
