@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import {BrowserRouter as Router, Route,Redirect} from "react-router-dom";
+import {BrowserRouter as Router, Route, Redirect, BrowserRouter} from "react-router-dom";
 
 import Header from "./components/header/header";
 import HomePage from "./components/homePage/homePage";
@@ -10,7 +10,9 @@ import ImgPage from "./components/image-page/imgPage";
 import ANAKIN_IMAGE from './assets/img/Anakin.jpg'
 import PostRender from "./components/Posts/post-render";
 import UserInfo from "./components/contacts/userInfo";
+
 const RAY_IMAGE = "https://specials-images.forbesimg.com/imageserve/5e63b3c8e1e617000759130e/960x0.jpg?fit=scale";
+
 function App() {
 
     const contacts = [{
@@ -74,28 +76,34 @@ function App() {
             image: RAY_IMAGE,
             date: "28 лютого"
         },
-        ];
+    ];
     return (
         <div>
             <div className="wrapper">
                 <div className="container">
-                    <Router>
-                        <Header/>
-                        <Route exact path="">
-                            <Redirect to="/home" />
-                        </Route>
-                        <Route path='/home' component={HomePage}/>
-                        <Route path='/images' component={ImgPage}/>
-                        <Route path='/posts'>
-                            <PostRender data={posts}/>
-                        </Route>
-                        <Route path='/contacts' exact={true}>
-                            <Contracts data={contacts}/>
-                        </Route>
-                        <Route path='/contacts/:username/:id'>
-                          <UserInfo data={contacts}/>
-                        </Route>
-                    </Router>
+
+                    <BrowserRouter basename='Home_Work-25'>
+                        <Router>
+                            <Header/>
+                            <Route exact path="">
+                                <Redirect to="/home"/>
+                            </Route>
+                            <Route path='/home' component={HomePage}/>
+                            <Route path='/images' component={ImgPage}/>
+                            <Route path='/posts'>
+                                <PostRender data={posts}/>
+                            </Route>
+                            <Route path='/contacts' exact={true}>
+                                <Contracts data={contacts}/>
+                            </Route>
+                            <Route path='/contacts/:username/:id'>
+                                <UserInfo data={contacts}/>
+                            </Route>
+                        </Router>
+                    </BrowserRouter>
+
+
+
                 </div>
             </div>
 
