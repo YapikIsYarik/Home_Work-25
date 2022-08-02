@@ -81,7 +81,7 @@ function App() {
                 <div className="container">
                     <Router>
                         <Header/>
-                        <Route exact path="/">
+                        <Route exact path="">
                             <Redirect to="/home" />
                         </Route>
                         <Route path='/home' component={HomePage}/>
