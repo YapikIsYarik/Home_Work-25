@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import {BrowserRouter as Router, Route, Redirect, BrowserRouter} from "react-router-dom";
+import {BrowserRouter as Router, Route, Redirect, BrowserRouter, HashRouter} from "react-router-dom";
 
 
 import Header from "./components/header/header";
@@ -83,7 +83,7 @@ function App() {
             <div className="wrapper">
                 <div className="container">
                     <Router>
-                        <BrowserRouter basename="/Home_Work-25">
+                        <HashRouter >
                             <Header/>
                             <Route exact path="">
                                 <Redirect to="/home"/>
@@ -99,7 +99,7 @@ function App() {
                             <Route path='/contacts/:username/:id'>
                                 <UserInfo data={contacts}/>
                             </Route>
-                        </BrowserRouter>
+                        </HashRouter>
                     </Router>
                 </div>
             </div>
