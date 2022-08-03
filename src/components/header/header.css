@@ -1,7 +1,4 @@
-ul[class],
-ol[class] {
-    list-style: none;
-}
+
 .header-container{
     display: flex;
     align-items: center;
