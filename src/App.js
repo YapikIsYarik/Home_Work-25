@@ -85,10 +85,7 @@ function App() {
                     <Router>
                         <BrowserRouter basename="/Home_Work-25">
                             <Header/>
-                            <Route exact path="">
-                                <Redirect to="/home"/>
-                            </Route>
-                            <Route path='/home' component={HomePage}/>
+                            <Route path='/' exact={true} component={HomePage}/>
                             <Route path='/images' component={ImgPage}/>
                             <Route path='/posts'>
                                 <PostRender data={posts}/>
